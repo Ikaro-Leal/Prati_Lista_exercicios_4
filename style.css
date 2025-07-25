@@ -132,6 +132,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.text-contato{
+  margin-top: 1rem;
+}
+
 .icones-contato{
     display: flex;
     flex-direction: row;
