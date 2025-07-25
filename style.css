@@ -1,0 +1,316 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*lembretes
+
+o topo, no maximo de 784, dai para baixo tem que vira burger
+sdaasd
+
+asdasd
+
+*/
+
+
+
+:root {
+    --cor-fundo: #F8F9FA;
+    --cor-fonte: #212529;
+    --cor-link: #6C757D;    /*0d6efd*/
+    --cor-header: #E9ECEF;       /* cinza claro */
+    --cor-main: #FFFFFF;         /* branco */
+    --cor-footer: #DEE2E6;       /* um tom mais escuro que o header */
+    --cor-card: #FFFFFF;         /* fundo dos cards ou seções */
+    --cor-borda: #CED4DA;        /* bordas suaves */
+    --cor-hover: #ADB5BD;        /* hover sutil */
+    --cor-destaque: #0DCAF0;     /* azul pastel (acento visual, contraste bom) */
+    --fonte-principal: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-fonte);
+}
+
+.avo{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1rem;      --+-- */
+}
+
+.pai{
+    /* background-color: yellow; */
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.pai header{
+    /* background-color: grey; */
+    background-color: var(--cor-header);
+    border: 0.125rem solid var(--cor-borda);
+    grid-area: 1/1/1/-1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    min-height: 6rem;
+    position: relative;
+}
+
+.pai header * {
+    text-decoration: none;
+    list-style: none;
+    color: var(--cor-fonte);
+}
+
+.pai header p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.pai header p span{
+    color: red;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* background-color: red; */
+}
+
+.menu li a{
+    /* border: 3px solid white; background-color: rgba(110, 13, 13, 0.473); */
+    color: var(--fonte-principal);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;    
+    transition: color 0.3s;
+    margin-right: 2.25rem;
+}
+
+.menu li a:hover {
+    color: var(--cor-destaque);
+}
+
+.principal{
+    /* background-color: aquamarine; */
+    /* background-color: var(--cor-main); -------------------------------------------<----------*/
+    grid-area: 2/1/2/-1;
+    padding: 2rem;        /*   +---+*/
+}
+
+.principal section{
+    /* background-color: blue; border: 3px solid red; */
+    /* background-color: var(--cor-card);  -------------------------------------------<----------*/
+    /* background-color: aliceblue; */
+    background-color: var(--cor-card);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.principal section h2 {
+    margin-bottom: 2rem;
+}
+
+.icones-contato{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* gap: 2rem; */
+    margin-top: 2rem;
+}
+
+.icones-contato img {
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* margin-left: 2rem;
+    margin-top: 2rem; */
+}
+
+.icones-contato a img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.pai footer{
+    grid-area: 3/1/3/-1;
+    background-color: var(--cor-footer);
+    border: 0.125rem solid var(--cor-borda);
+    padding: 1.4rem;
+}
+
+
+
+
+/* TABLETS e celulares */
+@media (max-width: 768px) {
+  .pai {
+    grid-template-rows: auto auto auto;
+  }
+
+  .pai header p {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .menu li a {
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .principal section {
+    padding: 1rem;
+    gap: 10rem;
+  }
+
+  
+
+  .sobre {
+    flex-direction: column;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  /* .pai header {
+    flex-direction: column;              <--------------- Ideia de deixar no centro | RUIM --+
+    align-items: center;
+  } */
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pai header p {
+    font-size: 0.9rem;
+  }
+
+  .menu li a {
+    font-size: 0.85rem;
+    margin-right: 0;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .icones-contato{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icones-contato a{
+    margin-top: 4rem;
+    /* border: 3px solid rgba(0,0,0, 0.1);
+    width: 14rem;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem; */
+  }
+
+.icones-contato a:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+  .principal section {
+    padding: 0.8rem;
+    gap: 5rem;
+  }
+}
+
+
+
+/* ========PC======= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 0.25rem;
+  background: var(--cor-fonte);
+  border-radius: 0.625rem;
+  transition: 0.3s;
+  transform-origin: center;
+  /* transition: all 0.3s linear; */
+  transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* ===== mobile: esconder menu ===== */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-header);
+    z-index: 5;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    /* transform: rotate(45deg) translate(0.5rem, 0.5rem); */
+    /* transform: rotate(45deg) translateY(0.5rem); */
+    transform: translateY(0.575rem) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    /* transition: 0.7s; */
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    /* transform: rotate(-45deg) translate(0.5rem, -0.5rem); */
+    /* transform: rotate(-45deg) translateY(-0.5rem); */
+    transform: translateY(-0.575rem) rotate(-45deg);
+  }
+}
+
+
+
+
